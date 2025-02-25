@@ -20,4 +20,8 @@ describe("Conversión de números a romanos", () => {
     it("convierte 10 en X", () => {
         expect(numeroARomano(10)).toBe("X");
     });
+
+    it("convierte 50 en L", () => {
+        expect(numeroARomano(50)).toBe("L");
+    });
 });
