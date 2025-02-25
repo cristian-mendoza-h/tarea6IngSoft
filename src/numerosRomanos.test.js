@@ -12,4 +12,8 @@ describe("Conversión de números a romanos", () => {
     it("convierte 5 en V", () => {
         expect(numeroARomano(5)).toBe("V");
     });
+
+    it("convierte 7 en VII", () => {
+        expect(numeroARomano(7)).toBe("VII");
+    });
 });
