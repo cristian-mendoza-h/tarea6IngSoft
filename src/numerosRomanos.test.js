@@ -32,4 +32,8 @@ describe("Conversión de números a romanos", () => {
     it("convierte 499 en CDXCIX", () => {
         expect(numeroARomano(499)).toBe("CDXCIX");
     });
+
+    it("convierte 500 en D", () => {
+        expect(numeroARomano(500)).toBe("D");
+    });
 });
