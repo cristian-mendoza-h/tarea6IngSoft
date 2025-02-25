@@ -8,4 +8,8 @@ describe("Conversión de números a romanos", () => {
     it("convierte 2 en II", () => {
         expect(numeroARomano(2)).toBe("II");
     });
+
+    it("convierte 5 en V", () => {
+        expect(numeroARomano(5)).toBe("V");
+    });
 });
