@@ -1,15 +1,18 @@
-import sumar from "./sumador";
+import numeroARomano from "./numerosRomanos.js";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const inputNumero = document.querySelector("#numero");
+const form = document.querySelector("#romano-form");
+const resultadoDiv = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+    const numero = Number.parseInt(inputNumero.value);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+    if (isNaN(numero) || numero <= 0 || numero > 500) {
+        resultadoDiv.innerHTML = "<p>Por favor, ingrese un número válido entre 1 y 500.</p>";
+        return;
+    }
+
+    resultadoDiv.innerHTML = "<p>" + numeroARomano(numero) + "</p>";
 });
