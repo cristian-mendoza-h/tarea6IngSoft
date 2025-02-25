@@ -1,5 +1,7 @@
 function numeroARomano(num) {
     const valores = [
+        { valor: 500, simbolo: "D" },
+        { valor: 400, simbolo: "CD" },
         { valor: 100, simbolo: "C" },
         { valor: 90, simbolo: "XC" },
         { valor: 50, simbolo: "L" },
@@ -12,11 +14,14 @@ function numeroARomano(num) {
     ];
 
     let resultado = "";
+    let i = 0;
 
-    for (const item of valores) {
-        while (num >= item.valor) {
-            resultado += item.simbolo;
-            num -= item.valor;
+    while (num > 0) {
+        if (num >= valores[i].valor) {
+            resultado += valores[i].simbolo;
+            num -= valores[i].valor;
+        } else {
+            i++;
         }
     }
 
@@ -24,3 +29,4 @@ function numeroARomano(num) {
 }
 
 export default numeroARomano;
+
